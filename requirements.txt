@@ -3,3 +3,4 @@ pilmoji
 emoji
 django
 gunicorn
+requests
