@@ -2,7 +2,7 @@ import base64, math, textwrap, re, requests, sys
 from emoji import get_emoji_unicode_dict
 
 from io import BytesIO
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
 
 
 def PILtoBase64(img):
@@ -109,12 +109,17 @@ def getImage(basetext, fontpath = "ARIAL_MONO.ttf", path_prefix=""):
         i = 0
         while i < len(line):
             if line[i] == '\0':
-                img : Image.Image = Image.open(_emojiList[emoji_index].bytes).convert("RGBA")
-                img = img.resize((math.floor(charWidth*1.5), math.floor(charWidth*1.5)))
-                x_disp = math.floor((i - len(line)/2) * charWidth)
-                textImage.paste(img,(int(width/2) + x_disp,y+int(fontsize/3)),img)
-                i+=1
-                emoji_index+=1
+                try:
+                    img : Image.Image = Image.open(_emojiList[emoji_index].bytes).convert("RGBA")
+                except UnidentifiedImageError:
+                    pass
+                else:
+                    img = img.resize((math.floor(charWidth*1.5), math.floor(charWidth*1.5)))
+                    x_disp = math.floor((i - len(line)/2) * charWidth)
+                    textImage.paste(img,(int(width/2) + x_disp,y+int(fontsize/3)),img)
+                finally:
+                    i+=1
+                    emoji_index+=1
             i+=1
         y += font.size
 
