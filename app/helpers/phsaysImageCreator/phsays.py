@@ -93,6 +93,10 @@ def getImage(basetext, fontpath = "ARIAL_MONO.ttf", path_prefix=""):
         font = ImageFont.truetype(fontpath, fontsize)
         tarr = textwrap.wrap(basetext, math.floor(width/font.getsize("a")[0]))
   
+    if (fontsize) > 332:
+        fontsize = 332
+        font = ImageFont.truetype(fontpath, fontsize)
+        tarr = textwrap.wrap(basetext, math.floor(width/font.getsize("a")[0]))
 
     textheight = font.getsize("Bq")[1] * len(tarr)
     textlength = max(font.getsize(s)[0] for s in tarr)
