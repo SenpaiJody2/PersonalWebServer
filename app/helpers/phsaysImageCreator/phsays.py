@@ -112,7 +112,7 @@ def getImage(basetext, fontpath = "ARIAL_MONO.ttf", path_prefix=""):
                 img : Image.Image = Image.open(_emojiList[emoji_index].bytes).convert("RGBA")
                 img = img.resize((math.floor(charWidth*1.5), math.floor(charWidth*1.5)))
                 x_disp = math.floor((i - len(line)/2) * charWidth)
-                textImage.paste(img,(int(width/2) + x_disp,y),img)
+                textImage.paste(img,(int(width/2) + x_disp,y+int(fontsize/3)),img)
                 i+=1
                 emoji_index+=1
             i+=1
