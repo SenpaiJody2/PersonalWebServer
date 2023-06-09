@@ -2,3 +2,4 @@ Pillow
 pilmoji
 emoji
 django
+gunicorn
