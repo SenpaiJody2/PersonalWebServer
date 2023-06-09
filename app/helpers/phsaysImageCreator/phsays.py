@@ -125,7 +125,6 @@ def getImage(basetext, fontpath = "ARIAL_MONO.ttf", path_prefix=""):
 
     baseImage.paste(textImage,(50,120), textImage)
     
-    baseImage.show()
     #output = 'data:image/jpeg;base64,' + PILtoBase64(baseImage)
     #print(PILtoBase64(baseImage),end="")
     return PILtoBase64(baseImage)
