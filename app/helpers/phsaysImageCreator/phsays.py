@@ -130,9 +130,3 @@ def getImage(basetext, fontpath = "ARIAL_MONO.ttf", path_prefix=""):
     return PILtoBase64(baseImage)
 
 
-    
-    
-if __name__ == "__main__":
-    main()
-
-
