@@ -6,7 +6,7 @@ authors = ["SenpaiJody <59369337+SenpaiJody@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 
 
 [build-system]
