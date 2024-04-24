@@ -9,6 +9,6 @@ def phsays(request : HttpRequest):
     if request.method == "POST":
         data = request.POST
         message = data.get("message")
-        return HttpResponse(phsaysLib.getImage(message, "ARIAL_MONO.ttf", "app/helpers/phsaysImageCreator"))
+        return HttpResponse(phsaysLib.getImage(message, "BONDSTORY_MINAMOTO_EDIT.ttf", "app/helpers/phsaysImageCreator"))
     else:
         return HttpResponse("Invalid Request Method.")
