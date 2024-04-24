@@ -213,12 +213,12 @@ def getImage(inputtext, fontpath = "ARIAL_MONO.ttf", path_prefix=""):
 
     
     
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
     #main()
-    try:
-        main()
-    except:
-        PrintError()
+    # try:
+    #     main()
+    # except:
+    #     PrintError()
 
 
